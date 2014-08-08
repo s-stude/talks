@@ -1,0 +1,727 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/bright/styles/screen.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <style>
+        .slide.shout-invert {
+            background: white;
+        }
+
+        .slide.shout-invert h2 {
+            color: #666;
+            font-weight: 700;
+        }
+
+        .slide.shout-center h2 {
+            text-align: center;
+        }
+
+        .slide h2 small{
+            font-size: 80%;
+            float: right;
+        }
+
+        .slide.shout-m h2 {
+            font-size: 60px;;
+        }
+
+        .slide.shout-l h2 {
+            font-size: 70px;;
+        }
+
+        .slide.shout-xl h2 {
+            font-size: 80px;;
+        }
+
+        .shout-header-mark {
+            color: #52a2df;
+        }
+
+            /*.slide.shout-invert {*/
+            /*background: white;*/
+            /*}*/
+            /*.slide.shout-invert h2{*/
+            /*font-size: 60px;*/
+            /*color: #666;*/
+            /*}*/
+    </style>
+</head>
+<body class="list">
+<header class="caption">
+    <h1>Parse'им backend</h1>
+    <p>Аким Халилов @ WebJam 2014</p>
+</header>
+<section class="slide cover" id="Cover">
+    <div>
+        <h2>Parse'им backend</h2>
+        <p>Аким Халилов, WebConsultants</p>
+        <p>@ WebJam 2014</p>
+        <!--
+            To apply styles to the certain slides
+            set slide ID to get needed elements
+            -->
+        <style>
+            #Cover {
+                background: url('pictures/parse_data_256.png') 50px 50px no-repeat, white;
+                background-size: 30%;
+            }
+
+            #Cover h2 {
+                margin: 80px 0 0;
+                text-align: right;
+                font-size: 70px;
+            }
+
+            #Cover p {
+                margin: 10px 0 0;
+                text-align: right;
+                font-style: italic;
+                font-size: 25px;
+                padding: 0 4px;
+            }
+
+            #Cover .parse-cloud {
+
+            }
+
+            #Cover .webcamp {
+                position: absolute;
+                bottom: 10px;
+                right: 20px;
+                1 width: 30%;
+            }
+
+            #Cover p a {
+                color: #FFF;
+            }
+        </style>
+    </div>
+</section>
+
+<section class="slide shout shout-invert shout-center">
+    <div>
+        <h2>backendless</h2>
+    </div>
+</section>
+<section class="slide shout shout-invert shout-center">
+    <div>
+        <h2>Backend <br/> as a Service</h2>
+    </div>
+</section>
+<section class="slide shout shout-invert shout-center">
+    <div>
+        <h2>BaaS</h2>
+    </div>
+</section>
+
+<section class="slide shout shout-invert shout-m">
+    <div>
+        <h2>Возможность интегрировать приложение с&nbsp;облачным хранилищем данных</h2>
+    </div>
+</section>
+
+<section class="slide shout shout-invert shout-center">
+    <div>
+        <h2>"Аутсорсим" всё, что делали на backend'е</h2>
+    </div>
+</section>
+
+<section class="slide shout shout-invert shout-m">
+    <div>
+        <h2>
+            Нет своих серверов, админов, server-side разработчиков..!
+        </h2>
+    </div>
+</section>
+
+<section class="slide shout shout-invert shout-l">
+    <div>
+        <h2>&nbsp;&nbsp;и все это <span class="shout-header-mark">бесплатно</span>!
+        </h2>
+    </div>
+</section>
+
+<section class="slide shout shout-invert shout-l">
+    <div>
+        <h2>
+            или <i>почти</i> <span class="shout-header-mark">бесплатно</span>!
+        </h2>
+    </div>
+</section>
+
+<section class="slide cover w">
+    <div>
+        <!--<h2>-->
+        <!--<a href="http://parse.com">parse.com</a>-->
+        <!--</h2>-->
+        <img src="pictures/parse-logo.png"/>
+    </div>
+</section>
+
+<section class="slide" id="parse-history">
+    <div>
+        <h2>История</h2>
+        <ul>
+            <li>Основатель &rarr;</li>
+            <li>Запустили в 2011 году</li>
+            <li>Участвовали в Y Combinator</li>
+            <li>$7M инвестиций</li>
+            <li>260 000 приложений используют Parse</li>
+            <li>куплен Facebook в 2013-м за $85M</li>
+        </ul>
+
+        <img src="pictures/parse-ceo.png" alt=""/>
+
+        <style>
+            #parse-history img {
+                position: absolute;
+                right: 90px;
+                top: 50%;
+                margin-top: -210px;
+            }
+        </style>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Возможности</h2>
+        <ul>
+            <li>Cloud storage (общий для всех клиентов)</li>
+            <li>Social network login (FB из коробки)</li>
+            <li>Cloud code</li>
+            <li>Background Jobs</li>
+            <li>Offline mode</li>
+            <li>Push notifications</li>
+            <li>Dashboard + Analytics</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide shout shout-center">
+    <div>
+        <h2>Платформы</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <img class="place c" src="pictures/parse-platforms.png" alt=""/>
+    </div>
+</section>
+
+
+<section class="slide shout shout-center">
+    <div>
+        <h2>JavaScript SDK</h2>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Основа</h2>
+        <img class="place c" src="pictures/backbone.png" alt=""/>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Забегая вперед:</h2>
+        <pre><code class="language-javascript">var Post = new ParseObject("Post");
+var blogPost = new Post();
+blogPost.save({"title": "Hello World"})
+        .then(function(object) {
+            alert("Yay! It worked!");
+        });</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Подключаем библиотеку</h2>
+        <pre><code class="language-javascript">&lt;script type="text/javascript" src="parse.js"&gt;
+&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;
+    Parse.initialize("APP_ID", "JAVASCRIPT_KEY");
+&lt;/script&gt;
+</code></pre>
+    </div>
+</section>
+
+
+<section class="slide shout">
+    <div>
+        <h2>Parse.Object</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>
+            Parse.Object
+        </h2>
+        <pre><code class="language-javascript">var Person = Parse.Object.extend("Person");
+var manager = new Person();
+// Backbone style
+var Person = Parse.Object.extend({
+    className: "Person"
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+            <pre class="place c"><code class="language-javascript">var Monster = Parse.Object.extend("Monster", {
+    initialize: function (attrs, options) {
+        this.sound = "Rawr"
+    }, {
+    create: function() { // Class methods
+        var monster = new Monster();
+        return monster;
+    }
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <pre><code class="language-javascript">model.save(attrs, {
+    success: function(obj) { },
+    error: function(obj, err) { }
+});
+model.destroy({
+    success: function(myModel) { },
+    error: function(myModel, error) { }
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Свойства по умолчанию</h2>
+        <pre><code class="language-javascript">{
+    objectId: "xWMyZ4YEGZ",
+    createdAt:"2011-06-10T18:33:42Z",
+    updatedAt:"2011-06-10T18:33:42Z"
+}
+object.id, object.updatedAt, object.createdAt</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Object retrieve</h2>
+        <pre><code class="language-javascript">var Order = Parse.Object.extend("Order");
+var query = new Parse.Query(Order);
+query.get('&lt;object id&gt;', {
+    success: function(object) { },
+    error: function(object, error) { }
+});</code></pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Object refresh</h2>
+        <pre><code class="language-javascript">object.fetch({
+   success: function(myObject) { },
+   error: function(myObject, error) { }
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Object helpers</h2>
+        <pre><code class="language-javascript">model.increment('counter');
+// array helpers
+model.add('skills', 'HTML');
+model.addUnique('skills', 'CSS');
+model.addUnique('skills', 'JavaScript');</code></pre>
+    </div>
+</section>
+
+
+<section class="slide shout">
+    <div>
+        <h2>Object Relations</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>One-to-One, One-to-Many <small>1/2</small></h2>
+        <pre><code class="language-javascript">var Post = Parse.Object.extend("Post");
+var Comment = Parse.Object.extend("Comment");
+
+var myPost = new Post();
+var myComment = new Comment();</code></pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>One-to-One, One-to-Many <small>2/2</small></h2>
+        <pre><code class="language-javascript">myPost.set("title", "I'm Hungry");
+myPost.set("content", "Where should we go for lunch?");
+
+myComment.set("content", "Let's do Sushirrito.");
+myComment.set("parent", myPost);
+myComment.save();</code></pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Fetching relations</h2>
+        <pre><code class="language-javascript">var post = fetchedComment.get("parent");
+post.fetch({
+    success: function(post) {
+        var title = post.get("title");
+    }
+});</code></pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Many-to-Many Relationships</h2>
+        <pre><code class="language-javascript">var user = Parse.User.current();
+var relation = user.relation("likes");
+relation.add(post);
+user.save();</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Operations with relations</h2>
+        <pre><code class="language-javascript">relation.remove(post1);
+relation.remove(post2);
+
+relation.add([post1, post2, post3]);
+</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Fetching relations</h2>
+        <pre><code class="language-javascript">relation.query().find({
+    success: function(listOfAllItems) { }
+});</code></pre>
+        <p>Или указать <code>query</code> фильтр.. (далее)</p>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>Parse.Query</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Parse.Query</h2>
+        <pre><code class="language-javascript">var Customer = Parse.Object.extend("Customer");
+var query = new Parse.Query(Customer);
+query.equalTo("firstName", "Mike");
+query.find({
+    success: function(results) { }
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Parse.Query (cont..)</h2>
+        <ul>
+            <li><code>query.equalTo</code> <code>query.notEqualTo </code></li>
+            <li><code>query.greaterThan</code> <code>query.lessThan </code></li>
+            <li><code>query.lessThanOrEqualTo</code> <code>query.greaterThanOrEqualTo </code></li>
+            <li><code>query.limit(10);</code></li>
+            <li><code>query.skip(10);</code></li>
+            <li><code>query.ascending("score");</code></li>
+            <li><code>query.descending("score");</code></li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Parse.Query (more..)</h2>
+        <ul>
+            <li><code>query.startsWith("name", "Big Daddy's");</code></li>
+            <li><code>query.containsAll("arrayKey", [2, 3, 4]);</code></li>
+            <li><code>query.first()</code></li>
+            <li><code>query.count()</code></li>
+            <li><code>Parse.Query.or(query1, query2);</code></li>
+            <li>relational queries</li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="slide shout">
+    <div>
+        <h2>Parse.Collection</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <pre><code class="language-javascript">var TestCollection = Parse.Collection.extend({
+    model: TestObject
+});
+// Backbone's fetch
+collection.fetch({
+    success: function(collection) { },
+    error: function(collection, error) { }
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <pre><code class="language-javascript">var query = (new Parse.Query(TestObject))
+                .equalTo("temperature", "hot");
+var HotCollection = Parse.Collection.extend({
+    model: TestObject,
+    query: query
+});
+// or get from the query
+var collection = query.collection();</code></pre>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>Users & Roles</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <pre><code class="language-javascript">var user = new Parse.User();
+user.set("username", "my name");
+user.set("password", "my pass");
+user.set("email", "email@example.com");
+user.signUp(null, {
+    success: function(user) { },
+    error: function(user, error) { }
+});</code></pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <pre><code class="language-javascript">Parse.User.logIn("myname", "mypass", {
+    success: function(user) {},
+    error: function(user, error) {}
+});
+
+var currentUser = Parse.User.current();
+
+Parse.User.logOut();</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>User roles</h2>
+        <pre><code class="language-javascript">var Note = Parse.Object.extend("Note");
+var privateNote = new Note();
+privateNote.set("content", "This note is private!");
+// accessible only by current user
+privateNote.setACL(new Parse.ACL(Parse.User.current()));
+privateNote.save();</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Roles for multiple users</h2>
+        <pre><code class="language-javascript">var groupMessage = new Message();
+var groupACL = new Parse.ACL();
+groupACL.setReadAccess(userA, true);
+groupACL.setWriteAccess(userB, true);
+
+groupMessage.setACL(groupACL);</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Roles (advanced)</h2>
+        <pre><code class="language-javascript">var roleACL = new Parse.ACL();
+
+var role = new Parse.Role("Administrator", roleACL);
+
+role.getUsers().add(userA);
+role.getRoles().add(roleA);</code></pre>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>Миграция существующих приложений</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Миграция</h2>
+        <ol>
+            <li>Заменяем Backbone.Model на Parse.Object</li>
+            <li>вместо urlRoot &rarr; className</li>
+            <li>Заменяем Backbone.Collection на Parse.Collection</li>
+            <li>Добавляем для collection Query</li>
+            <li>вместо model.fetch &rarr; используем query</li>
+        </ol>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>Хостинг</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Parse CLI</h2>
+        <pre><code class="language-bash">$ parse new MyCloud
+$ cd MyCloud
+$ echo "Hello World" > public/index.html
+$ parse deploy
+и все...</code></pre>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>Хочу backend...</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Cloud Code</h2>
+        <pre><code class="language-bash">$ parse new MyCloud</code></pre>
+        &nbsp;&nbsp;&nbsp;&nbsp;&darr;
+        <pre><code class="language-bash">-cloud/
+    main.js -- наш облачный backend</code></pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <pre><code class="language-javascript">Parse.Cloud.define("hello", function(request, response) {
+    response.success("Hello world!");
+});
+// вызов из клиента
+Parse.Cloud.run('hello', {}, {
+    success: function(result) { },
+    error: function(error) { }
+});</code></pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Ловим Object Update</h2>
+        <pre><code class="language-javascript">Parse.Cloud.beforeSave("Review",
+function(request, response) {
+    var review = request.object; // BB Model;
+    response.error("ERROR_MESSAGE"); // will fail save
+    response.success(); // will complete save
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Object AfterSave</h2>
+        <pre><code class="language-javascript">Parse.Cloud.afterSave("Comment", function(request) {
+    // push notifications // update comments count
+    // do any other work here
+});</code></pre>
+        <p>Клиент получит Success результат, даже если Cloud Code упадет с ошибкой</p>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>BeforeDelete & AfterDelete</h2>
+        <!--<p>Аналогично:</p>-->
+        <pre><code class="language-javascript">Parse.Cloud.beforeDelete("OBJECT_NAME", fn);
+Parse.Cloud.afterDelete("OBJECT_NAME", fn);</code></pre>
+        <ul>
+            <li>проверка условий перед удалением</li>
+            <li>выполнение работы после удаления</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>Безопасность</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <p>По умолчанию, <i>все могут все</i>. Что делать?</p>
+        <ul>
+            <li>Отключить "Allow client class creation" в админке</li>
+            <li>Настроить опции по чтению / записи в классы</li>
+            <li>Использовать ACL</li>
+            <li>Использовать группы доступа (админы, модераторы, пользователи)</li>
+            <li>Использовать Cloud Code для чувствительных данных</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide" id="last">
+    <div>
+        <h2>Parse'им backend</h2>
+        <p>Аким Халилов @ WebCamp 2014</p>
+        <ul>
+            <li><a href="http://sstude.com">http://sstude.com</a></li>
+            <li><a href="http://twitter.com/sstude">@sstude</a></li>
+            <li><a href="mailto:a@sstude.com">a@sstude.com</a></li>
+            <li>
+                <a href="http://sstude.com/talks/parse-webjam-2014">
+                    http://sstude.com/talks/parse-webjam-2014
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<p class="badge"><a href="https://github.com/s-stude/talks-webcamp-2014">Fork me on Github</a></p>
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+<div class="progress">
+    <div></div>
+</div>
+<script src="shower/shower.min.js"></script>
+<script src="js/prism.js"></script>
+<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
