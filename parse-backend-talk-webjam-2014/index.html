@@ -385,19 +385,31 @@ collection.fetch({ ... });</code></pre>
     </div>
 </section>
 
-<section class="slide cover w" id="bgjob">
+<section class="slide">
     <div>
-        <img class=""
+        <pre><code class="language-javascript">// пример магии
+getTrackLines().then(function(lines){
+    lines.forEach(function(line){
+        promises.push(newTrack.save());
+    });
+    return Parse.Promise.when(promises);
+})
+.then(function(){ status.success("Fetched.");});</code></pre>
+    </div>
+</section>
+
+<section class="slide" id="bgjob">
+    <div>
+        <h2>Настройка</h2>
+        <img class="pic-middle"
              src="pictures/setup-bg-job.png" alt=""/>
         <style>
-            #bgjob{
-                background: white;
+            #bgjob .pic-middle{
+                width : 99%;
             }
         </style>
     </div>
 </section>
-
-
 
 <section class="slide shout">
 <div>
@@ -406,26 +418,44 @@ collection.fetch({ ... });</code></pre>
 </section>
 
 <section class="slide">
-<div>
+    <div>
+        <h2>Интеграция</h2>
+        <ul>
+            <li>Отправка электронной почты (Mailgun, Mandrill, SendGrid)</li>
+            <li>Отправка SMS (Twilio)</li>
+            <li>Платежи кредитными картами (Stripe)</li>
+        </ul>
+    </div>
+</section>
 
+<section class="slide">
+<div>
+    <pre><code class="language-javascript">Mandrill.sendEmail({
+        message: {
+            text: "Your box was shipped!",
+            subject: "New information | CV1234567US",
+            from_email: "i@notify.me",
+            to: [{ email: "a@sstude.com", }]
+        }, // more options
+});</code></pre>
+</div>
+</section>
+
+<section class="slide shout">
+<div>
+    <h2>Дополнительные возможности Parse</h2>
 </div>
 </section>
 
 <section class="slide">
 <div>
-
-</div>
-</section>
-
-<section class="slide">
-<div>
-
-</div>
-</section>
-
-<section class="slide">
-<div>
-
+    <ul>
+        <li>Аналитика</li>
+        <li>Аутентификация (Parse.User или Login with Facebook)</li>
+        <li>Роли и ограничения (RO, RW, admins, moderators, etc.)</li>
+        <li>Cloud Code + обработчики beforeUpdate / afterUpdate</li>
+        <li>Хостинг + доменное имя</li>
+    </ul>
 </div>
 </section>
 
