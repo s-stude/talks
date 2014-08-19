@@ -257,33 +257,176 @@
             <li>Возможность добавить коробку в кабинет (CRUD)</li>
             <li>Возможность просмотреть трек-записи (Search)</li>
             <li>Получение трекинг записей сервером от поставщика данных (Background Job)</li>
-            <li>Рассылка сообщений с новыми трекинг данными (3rd party apps)</li>
+            <li>Рассылка сообщений с новыми трекинг данными (3rd Party Apps)</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>CRUD</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>
+            Parse.Object</small>
+        </h2>
+<pre><code class="language-javascript">var Box = Parse.Object.extend("Box");
+var newBox = new Box();
+// Backbone.Model style
+var Box = Parse.Object.extend({
+    className: "Box"
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>
+            CRUD <small>1/2</small>
+        </h2>
+<pre><code class="language-javascript">newBox.set('trackCode', 'CV1234567US');
+newBox.save(attrs, {
+    success: function(box){ ... },
+    error: function(box, error){ ... }
+});
+newBox.destroy({ ... });
+</code></pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>CRUD <small>2/2</small></h2>
+<pre><code class="language-javascript">var Box = Parse.Object.extend("Box");
+var newBox = new Box();
+var query = new Parse.Query(Box);
+
+query.get('&lt;object id&gt;', { ... });
+newBox.fetch({ ... });</code></pre>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2>Search</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Parse.Query</h2>
+<pre><code class="language-javascript">var Box = Parse.Object.extend("Box");
+var query = new Parse.Query(Box);
+query.equalTo("delivered", false);
+query.find({
+    success: function(results) { }
+});</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Parse.Query (cont..)</h2>
+        <ul>
+            <li><code>query.equalTo</code> <code>query.notEqualTo </code></li>
+            <li><code>query.greaterThan</code> <code>query.lessThan </code></li>
+            <li><code>query.lessThanOrEqualTo</code> <code>query.greaterThanOrEqualTo </code></li>
+            <li><code>query.limit(10);</code></li>
+            <li><code>query.skip(10);</code></li>
+            <li><code>query.ascending("price");</code></li>
+            <li><code>query.descending("price");</code></li>
         </ul>
     </div>
 </section>
 
 <section class="slide">
     <div>
+        <h2>Parse.Collection</h2>
+<pre><code class="language-javascript">var TrackingRecords = Parse.Collection.extend({
+    model: BoxTrack,
+    query: (new Parse.Query(BoxTrack))
+                .equalTo("trackCode", "CV1234567US")
+});
+collection.fetch({ ... });</code></pre>
+</div>
+</section>
 
-    </div>
+
+<section class="slide shout">
+<div>
+<h2>Background Job</h2>
+</div>
 </section>
 
 <section class="slide">
     <div>
-
+        <h2>Parse CLI</h2>
+        <pre><code class="language-bash">$ parse new MyTrackingApp</code></pre>
+        &nbsp;&nbsp;&nbsp;&nbsp;&darr;
+        <pre><code class="language-bash">-cloud/
+        main.js -- наш облачный backend</code></pre>
     </div>
 </section>
 
+
 <section class="slide">
     <div>
-
+        <h2>Parse.Cloud.job</h2>
+        <pre><code class="language-javascript">Parse.Cloud.job("GetTrackingFromVendor",
+    function(request, status) {
+        // magic...
+        status.success("Fetched."); // все норм.
+        status.error("Uh oh."); // все пропало
+});</code></pre>
     </div>
 </section>
 
-<section class="slide">
+<section class="slide cover w" id="bgjob">
     <div>
-
+        <img class=""
+             src="pictures/setup-bg-job.png" alt=""/>
+        <style>
+            #bgjob{
+                background: white;
+            }
+        </style>
     </div>
+</section>
+
+
+
+<section class="slide shout">
+<div>
+<h2>3rd Party Apps</h2>
+</div>
+</section>
+
+<section class="slide">
+<div>
+
+</div>
+</section>
+
+<section class="slide">
+<div>
+
+</div>
+</section>
+
+<section class="slide">
+<div>
+
+</div>
+</section>
+
+<section class="slide">
+<div>
+
+</div>
 </section>
 
 
