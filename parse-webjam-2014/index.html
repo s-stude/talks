@@ -310,6 +310,50 @@ newBox.fetch({ ... });</code></pre>
     </div>
 </section>
 
+<section class="slide shout">
+    <div>
+        <h2>Auth & Auth</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Parse.User</h2>
+        <pre><code class="language-javascript">var user = new Parse.User();
+user.set("username", "superuser");
+user.set("password", "qwerty");
+user.set("email", "email@example.com");
+
+user.signUp(null, { ... });</code></pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <pre><code class="language-javascript">Parse.User.logIn("superuser", "qwerty", {
+    success: function(user) {},
+    error: function(user, error) {}
+});
+
+var currentUser = Parse.User.current();
+
+Parse.User.logOut();</code></pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Безопасность</h2>
+        <pre><code class="language-javascript">var Box = Parse.Object.extend("Box");
+var myBox = new Box();
+myBox.set("trackCode", "CV1234567US");
+// accessible only by current user
+myBox.setACL(new Parse.ACL(Parse.User.current()));
+myBox.save();</code></pre>
+    </div>
+</section>
+
 <section class="slide shout shout-center">
     <div>
         <h2>Search</h2>
@@ -441,6 +485,16 @@ getTrackLines().then(function(lines){
 </div>
 </section>
 
+<section class="slide" id="emailnotif">
+    <div><img class="pic-middle" src="pictures/emial-notif.png" alt=""/>
+        <style>
+            #emailnotif .pic-middle{
+                width : 80%;
+            }
+        </style>
+    </div>
+</section>
+
 <section class="slide shout">
 <div>
     <h2>Дополнительные возможности Parse</h2>
@@ -451,10 +505,12 @@ getTrackLines().then(function(lines){
 <div>
     <ul>
         <li>Аналитика</li>
-        <li>Аутентификация (Parse.User или Login with Facebook)</li>
+        <li>Login with Facebook</li>
         <li>Роли и ограничения (RO, RW, admins, moderators, etc.)</li>
         <li>Cloud Code + обработчики beforeUpdate / afterUpdate</li>
-        <li>Хостинг + доменное имя</li>
+        <li>Relations - 1:M, M:M</li>
+        <li>Дополнительная безопасность</li>
+        <li>Хостинг</li>
     </ul>
 </div>
 </section>
@@ -464,10 +520,8 @@ getTrackLines().then(function(lines){
         <h2>Parse-им backend</h2>
         <p>Аким Халилов @ WebJam 2014</p>
         <ul>
-            <li><a href="http://sstude.com">http://sstude.com</a></li>
-            <li><a href="http://twitter.com/sstude">@sstude</a></li>
-            <li><a href="mailto:a@sstude.com">a@sstude.com</a></li>
-            <!--<li><a href="http://sstude.com/talks-webcamp-2014/">http://sstude.com/talks-webcamp-2014/</a></li>-->
+            <li><a href="http://twitter.com/sstude">@sstude</a>&nbsp;&nbsp;&nbsp;<a href="mailto:a@sstude.com">a@sstude.com</a>&nbsp;&nbsp;&nbsp;<a href="http://sstude.com">http://sstude.com</a></li>
+            <li><a href="http://sstude.com/talks/parse-webjam-2014/">http://sstude.com/talks/parse-webjam-2014/</a></li>
         </ul>
     </div>
 </section>
