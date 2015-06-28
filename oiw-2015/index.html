@@ -50,12 +50,13 @@
         </ul>
 </div></section>
 
-<section class="slide shout"><div>
-        <h2>Hybrid vs Native</h2>
+<section class="slide cover h"><div>
+        <!--<h2>Hybrid vs Native</h2>-->
+        <img class="" src="pictures/hybrid_native.jpg" alt=""/>
 </div></section>
 
 <section class="slide"><div>
-        <h2>Hybrid vs Native</h2>
+        <h2>Native vs. Hybrid</h2>
         <ul>
             <li>Интерфейс</li>
             <li>Производительность</li>
@@ -79,8 +80,14 @@
     </ul>
 </div></section>
 
-<section class="slide shout"><div>
-        <h2>Безысходность?</h2>
+<section class="slide cover h" id="despair"><div>
+        <h2 class="text-center place">Безысходность?</h2>
+    <img src="pictures/bezyshodnost.jpeg">
+    <style>
+        #despair{
+            color: white;
+        }
+    </style>
 </div></section>
 
 
@@ -132,10 +139,21 @@
 </div></section>
 
 <section class="slide shout" id="steroids-supersonic"><div>
-        <h2>Steroids & Supersonic</h2>
+        <!--<h2>Steroids & Supersonic</h2>-->
+        <img class="place steroids-logo" src="pictures/logo-steroids-2.svg" alt=""/>
+        <img class="place supersonic-logo" src="pictures/logo-supersonic-wide-small.svg" alt=""/>
     <style>
         #steroids-supersonic h2{
             font-size: 330%;
+        }
+
+        #steroids-supersonic .steroids-logo{
+            width: 35%;
+            margin-left: -200px;
+        }
+        #steroids-supersonic .supersonic-logo{
+            width: 35%;
+            margin-left: 200px;
         }
     </style>
 </div></section>
@@ -231,24 +249,106 @@
     message: "Please reply honestly, now.",
     buttonLabels: ["Yes", "No"]
 };
-supersonic.ui.dialog
-   .confirm("Are you awesome?", options)
+supersonic.ui.<mark>dialog</mark>
+   <mark>.confirm</mark>("Are you awesome?", options)
    .then(function(index) {
         if (index == 0) ... ; // YES
         if (index == 1) ... ; // NO
    });</code></pre>
-    <img class="confirm-pic place r" src="pictures/confirm_demo.png" alt="" style="width: 25%;"/>
+    <img class="confirm-pic place r" src="pictures/demo_confirm.png" alt="" style="width: 25%;"/>
     <style>
         #confirm pre{
             margin-top: -50px;
             margin-left: -50px;
         }
         #confirm .confirm-pic{
-            /*margin-bottom: 100px;*/
             margin-right: 50px;
-
         }
     </style>
+</div></section>
+
+<section class="slide" id="modal"><div>
+    <h2>Modal</h2>
+<pre><code>var modalView =
+    new supersonic.ui.View("example");
+var options = {
+    animate: true
+};
+supersonic.ui
+    .<mark>modal.show</mark>(modalView, options);</code></pre>
+    <img class="gif place r" src="pictures/demo_modal.gif" alt=""/>
+    <style>
+        #modal .gif{
+            margin-right: 50px;
+        }
+    </style>
+</div></section>
+
+<section class="slide" id="tabs"><div>
+    <h2>Tabs</h2>
+<pre><code>supersonic.ui.tabs.replace([
+{ title: "Web",
+   location: "http://www.google.com"},
+{ title: "Settings",
+   location: "settings#index", badge: "1"}
+]);
+supersonic.ui.<mark>tabs.show</mark>();
+</code></pre>
+    <img class="gif place r" src="pictures/demo_tabs.gif" alt=""/>
+    <style>
+        #tabs .gif{
+            margin-right: 50px;
+        }
+    </style>
+</div></section>
+
+<section class="slide" id="drawer"><div>
+    <h2>Drawer</h2>
+<pre><code>
+supersonic.ui.drawers.init("drawers#left");
+supersonic.ui.<mark>drawers.open</mark>();
+</code></pre>
+    <img class="gif place r" src="pictures/demo_drawer.gif" alt=""/>
+    <style>
+        #drawer .gif{
+            margin-right: 50px;
+        }
+    </style>
+</div></section>
+
+<section class="slide" id="layers"><div>
+    <h2>Layers</h2>
+<pre><code>var view =
+    new supersonic.ui.View("settings");
+
+supersonic.ui.<mark>layers.push</mark>(view);
+</code></pre>
+    <img class="gif place r" src="pictures/demo_layers.gif" alt=""/>
+    <style>
+        #layers .gif{
+            margin-right: 50px;
+        }
+    </style>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Kitchensink</h2>
+<p><a href="http://www.appgyver.com/supersonic/kitchensink">http://www.appgyver.com/supersonic/kitchensink</a></p>
+    <img class="" src="pictures/kitchensink-qr.png" alt="" style="width: 25%"/>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Supersonic основан на <a href="http://ionicframework.com/">Ionic</a></h2>
+
+    <h3>Но умеет больше:</h3>
+    <ul>
+        <li>CSS стилизация нативных компонентов (navigation bar, tabs)</li>
+        <li>Поддержка библиотек, кроме Angular</li>
+        <li>Нативная навигация</li>
+        <li>Нативная анимация</li>
+        <li>Работа с данными</li>
+    </ul>
+
 </div></section>
 
 <section class="slide"><div>
