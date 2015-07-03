@@ -357,12 +357,153 @@ supersonic.ui.<mark>layers.push</mark>(view);
 
 </div></section>
 
-<section class="slide"><div>
-    <h2>Пример supersonic</h2>
+<section class="slide shout"><div>
+    <h2>Плагины</h2>
+</div></section>
 
-    <img class="place" src="pictures/confirm_demo.png" alt=""/>
+<section class="slide"><div>
+    <h2>PhoneGap Плагины</h2>
+
+    <p>Возможность расширять приложение <br/> <a href="https://build.phonegap.com/plugins">https://build.phonegap.com/plugins</a></p>
+    <ul>
+        <li>PUSH Notifications</li>
+        <li>Social Sharing</li>
+        <li>Barcode Scanner</li>
+        <li>етц...</li>
+    </ul>
+</div></section>
+
+<section class="slide"><div>
+    <!--<h2>Плагины</h2>-->
+    <img class="place" src="pictures/appgyver_clouds_plugins.png" alt="" style="width: 90%;"/>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Android</h2>
+    <pre><code>window.plugins.pushNotification.register(
+    function successHandler(token){ /* ... */},
+    errorHandler, {
+        "senderID":"replace_with_sender_id"
+    }
+);
+    </code></pre>
+</div></section>
+
+<section class="slide"><div>
+    <h2>iOS</h2>
+    <pre><code>window.plugins.pushNotification.register(
+    function (token){ /* use token to send PUSH messages */},
+    errorHandler, {
+        "badge":"true",
+        "sound":"true",
+        "alert":"true",
+    }
+);
+    </code></pre>
+</div></section>
+
+
+<section class="slide"><div>
+    <pre><code>window.plugins.pushNotification
+    .onMessage<mark>InForeground</mark>(function(message){
+        // do whatever needs here
+    });
+
+window.plugins.pushNotification
+    .onMessage<mark>InBackground</mark>(function(message){
+        // do whatever needs here
+    })
+
+
+    </code></pre>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Отправка PUSH</h2>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Провайдеры PUSH</h2>
+    <ul>
+        <li><a href="http://urbanairship.com/products/mobile-app-engagement">Urban Airship</a></li>
+        <li><a href="http://parse.com">Parse.com</a></li>
+        <li><a href="https://developers.google.com/cloud-messaging/">Google Cloud Messaging</a></li>
+        <li>написать свой...</li>
+    </ul>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Parse</h2>
+</div></section>
+
+<section class="slide"><div>
+    <pre><code>curl -X POST \
+-H "X-Parse-Application-Id: super-puper-secret-id" \
+-H "X-Parse-REST-API-Key: super-puper-secret-key" \
+-H "Content-Type: application/json" \
+-d '{   "deviceType": "ios",
+        <mark>"deviceToken"</mark>: "0123456789abcde...",
+        "channels": [ "ABC" ]
+    }' \
+https://api.parse.com/1/installations
+    </code></pre>
+</div></section>
+
+<section class="slide"><div>
+    <pre><code>curl -X PUT \
+
+-H "X-Parse-Application-Id: super-puper-secret-id" \
+-H "X-Parse-REST-API-Key: super-puper-secret-key" \
+-H "Content-Type: application/json" \
+-d '{   <mark>"channels"</mark>: [ "ABC" ] }' \
+
+https://api.parse.com/1/installations/<mark>mrmBZvsErB</mark>
+    </code></pre>
+</div></section>
+
+
+<section class="slide shout"><div>
+    <h2>Share & Deploy</h2>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Share & Deploy</h2>
+    <ul>
+        <li>деплой в облако</li>
+        <li>share-инг с помощью Appgyver Scanner (+ custom build)</li>
+        <li>сборка для AppStore & Google Play</li>
+    </ul>
+    <pre><code>$ steroids deploy</code></pre>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Больше информации</h2>
+    <ul>
+        <li><a href="https://x.appgyver.com">https://x.appgyver.com</a></li>
+        <li><a href="http://docs.appgyver.com">http://docs.appgyver.com</a></li>
+        <li><a href="http://community.appgyver.com">http://community.appgyver.com</a></li>
+    </ul>
+</div></section>
+
+<section class="slide" id="last"><div>
+    <h2 class="text-center">PhoneGap на стероидах</h2>
+
+    <p class="text-center">Аким Халилов <br/>@ WebCamp 2015</p>
+
+    <p class="text-center">
+        <a href="http://twitter.com/sstude">@sstude</a> <br/>
+        <a href="mailto:a@sstude.com">a@sstude.com</a>
+    </p>
+
+    <style>
+        #last ul{
+            margin: 0 auto;
+            list-style: none;
+        }
+    </style>
 
 </div></section>
+
 
 <!--
     To hide progress bar from entire presentation
